@@ -1,61 +1,69 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hover Expand UI</title>
-  
-  <link rel="stylesheet" href="../static/style.css" />
+  <title>Menú</title>
+
+  <!-- Enlace al CSS personalizado -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+
+  <!-- tsParticles (fondo animado) -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
 </head>
 <body>
-  <h1 class="fluid">Elige la funcion</h1>
-  <p>
-    
-  </p>
-  <ul >
-    <li>
-      <article>
-        <h3>Distribucion</h3>
-        <p>
-          aaaaaaaaaaaaaaaaa
-        </p>
-        <a href="/distribucion"><span>Distribucion</span></a>
-        <img src="./img/distribucion.png" alt="" />
-      </article>
-    </li>
-    
-      
-    
+  <!-- Fondo animado de partículas -->
+  <div id="tsparticles"></div>
 
+  <!-- Contenedor principal: ilustración a la izquierda + overlay a la derecha -->
+  <div class="main-container">
+    <!-- 1) Ilustración ubicada fuera del cuadro -->
+    <div class="illustration-outside">
+      <img src="{{ url_for('static', filename='img/illustration.png') }}" alt="" />
+    </div>
 
+    <!-- 2) Overlay semitransparente con título y tarjetas -->
+    <div class="overlay">
+      <!-- Título principal -->
+      <h1 class="fluid">Menú</h1>
 
-    <li class="guardia-finde">  
-  <article>
-    <h3>Guardia de finde</h3>
-    <p>
-      Accedé a la herramienta para gestionar las guardias del fin de semana.
-    </p>
-    <a href="/guardia"><span>Guardia Finde</span></a>
+      <!-- Lista de tarjetas (ahora con 3 entradas) -->
+      <ul>
+        <!-- Tarjeta 1: Distribución -->
+        <li>
+          <article>
+            <h3>Distribución</h3>
+            <p>Accede a la sección de distribución para gestionar cambios de Nomina.</p>
+            <a href="/distribucion"><span>Distribución</span></a>
+            <img src="{{ url_for('static', filename='img/distribucion.png') }}" alt="" />
+          </article>
+        </li>
 
-    <img src="./img/guardiafinde.png" alt="Guardia Finde" />
-  </article>
-</li>
+        <!-- Tarjeta 2: Guardia de Fin de Semana -->
+        <li class="guardia-finde">
+          <article>
+            <h3>Guardia de Fin de Semana</h3>
+            <p>Accede a la herramienta para gestionar las guardias del fin de semana.</p>
+            <a href="/guardia"><span>Guardia de Finde</span></a>
+            <img src="{{ url_for('static', filename='img/guardiafinde.png') }}" alt="" />
+          </article>
+        </li>
 
-<li class="guardia-finde">  
-  <article>
-    <h3>Cronograma</h3>
-    <p>
-      Accedé a la herramienta para gestionar el cronograma.
-    </p>
-    <a href="/cronograma"><span>Cronograma</span></a>
+        <!-- Tarjeta 3: Nuevo microservicio “Web” -->
+        <li class="microservicio-web">
+          <article>
+            <h3>crono de Lideres</h3>
+            <p>Generador de crono mensual.</p>
+            <a href="/web"><span>Entrar al Web</span></a>
+            <!-- Si existiera una imagen interna, se ocultaría vía CSS -->
+            <img src="{{ url_for('static', filename='img/web.png') }}" alt="" />
+          </article>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-    <img src="./img/cronograma.png" alt="cronograma" />
-  </article>
-</li>
-  </ul>
-  
- 
-
-
+  <!-- Inicializamos tsParticles -->
+  <script src="{{ url_for('static', filename='js/particles.js') }}"></script>
 </body>
 </html>
