@@ -11,12 +11,16 @@ def home():
 # Redirecciona a microservicio de Guardia
 @app.route("/guardia")
 def guardia():
-    return redirect("https://controlguardia.onrender.com")
+    return redirect("https://guardiav2-production.up.railway.app/")
 
 # Redirecciona a microservicio de Distribución
 @app.route("/distribucion")
 def distribucion():
     return redirect("https://distribucion-1.onrender.com/")
+
+@app.route("/cronograma")
+def cronograma():
+    return redirect("https://web-production-2feb5.up.railway.app/")
 
 # Archivos estáticos (CSS, JS, imágenes)
 @app.route('/img/<path:filename>')
