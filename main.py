@@ -9,6 +9,7 @@ def home():
     return render_template('index.html')
 
 # Redirecciona a microservicio de Guardia
+
 @app.route("/guardia")
 def guardia():
     return redirect("https://guardiav2-production.up.railway.app/")
